@@ -394,27 +394,6 @@ curl -X POST http://localhost:5000/appeal \
 ```bash
 curl http://localhost:5000/log
 ```
-
-## Demo instructions
-
-Capture the following for your submission (screenshots or a short screen
-recording). Save images under a `screenshots/` folder and reference them here.
-
-1. **Server running** — terminal after `python app.py` showing it listening on
-   port 5000. _(e.g. `screenshots/01-server.png`)_
-2. **Submit — human-leaning** — the `POST /submit` curl and its JSON response
-   with a `Likely Human` prediction and a transparency label.
-   _(`screenshots/02-submit-human.png`)_
-3. **Submit — AI-leaning** — a second `POST /submit` on obviously AI-styled text
-   showing a `Likely AI` prediction. _(`screenshots/03-submit-ai.png`)_
-4. **Appeal** — the `POST /appeal` curl (using a `content_id` from step 2) and
-   the `under_review` response. _(`screenshots/04-appeal.png`)_
-5. **Audit log** — `GET /log` output showing the appealed record with
-   `status: under_review` and `appealed: true`.
-   _(`screenshots/05-log.png`)_
-6. **Rate limit (optional)** — 11 rapid submissions where the 11th returns
-   `429`. _(`screenshots/06-rate-limit.png`)_
-
 ## Known limitations
 
 - **Detection is heuristic, not definitive.** Neither the LLM nor stylometry can
